@@ -1,5 +1,6 @@
 package com.chisimdi.Ecommerce.shopping.cart.models;
 
+import com.chisimdi.Ecommerce.orders.models.Orders;
 import com.chisimdi.Ecommerce.products.models.Products;
 import com.chisimdi.Ecommerce.user.models.Users;
 import jakarta.persistence.*;
@@ -29,4 +30,7 @@ public class ShoppingCart {
 
     @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL)
     private List<ShoppingCartIdempotency>shoppingCartIdempotencies=new ArrayList<>();
+
+    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL)
+    private List<Orders>orders=new ArrayList<>();
 }
